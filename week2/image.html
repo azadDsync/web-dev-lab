@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Mapping Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Mapping Example</h1>
+    <p>Click on the different regions of the map to navigate!</p>
+    <img src="wmap.png" alt="World Map" usemap="#worldmap">
+
+    <map name="worldmap">
+
+        <area shape="rect" coords="50,50,250,150" href="https://earth.google.com/web/search/north+america/@37.48845146,-109.9562137,1885.69668069a,16157282.73967085d,35y,0h,0t,0r/data=CnwaThJICiUweDUyYjMwYjcxNjk4ZTcyOWQ6MHgxMzEzMjg4Mzk3NjFhMzgyGaz6AbRSQ0tAIUZGYt1TUFrAKg1ub3J0aCBhbWVyaWNhGAIgASImCiQJ4UXX2qCzRkARx1CGjx8pQ8AZW1iH5oWLUUAhqNDHn8otTMBCAggBOgMKATBCAggASg0I____________ARAA" alt="North America" title="United States, Canada, Mexico">
+        
+        <!-- Circular-->
+        <area shape="circle" coords="400,120,50" href="https://www.google.com/search?q=Europe" alt="Europe" title="United Kingdom, Germany, France, Italy, Spain, etc.">
+        
+        <!-- Polygonal -->
+        <area shape="poly" coords="500,200,550,250,600,300,500,350,450,300,500,250" href="https://earth.google.com/web/search/africa/@2.21674373,23.60280466,465.39239775a,10174930.96418502d,35y,0h,0t,0r/data=CnUaRxJBCiUweDEwYTA2YzBhOTQ4Y2Y1ZDU6MHgxMDgyNzBjOTllOTBmMGIzGQzIXu_-kCHAIcQhG0gXQUFAKgZhZnJpY2EYAiABIiYKJAne75rYH7ASQBFE36I3XqxDwBltdQPsjthLQCGIPEYaOcn0P0ICCAE6AwoBMEICCABKDQj___________8BEAA" alt="Africa" title="Nigeria, Egypt, South Africa, Kenya, Morocco, etc.">
+    </map>
+</body>
+</html>

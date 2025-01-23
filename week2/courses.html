@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .filters select, .filters input {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .filters input {
+            width: 300px;
+        }
+
+        .course-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .course-card-body {
+            padding: 15px;
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .course-description {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .course-meta span {
+            color: #007bff;
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .filters {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .filters select, .filters input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <div class="header">
+        Online Courses
+    </div> -->
+
+    <div class="container">
+        <div class="filters">
+            <input type="text" id="search" placeholder="Search for courses..." oninput="filterCourses()">
+            <select id="category" onchange="filterCourses()">
+                <option value="">Select Category</option>
+                <option value="programming">Programming</option>
+                <option value="design">Design</option>
+                <option value="marketing">Marketing</option>
+                <option value="business">Business</option>
+            </select>
+        </div>
+
+        <div id="course-list" class="course-list">
+       
+            <div class="course-card" data-category="programming">
+                <img src="demo.jpeg" alt="Course Image">
+                <div class="course-card-body">
+                    <div class="course-title">Introduction to JavaScript</div>
+                    <div class="course-description">Learn the basics of JavaScript programming in this beginner-friendly course.</div>
+                    <div class="course-meta">
+                        <span>4.5/5</span> | <span>30 hours</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="design">
+                <img src="demo.jpeg">
+                <div class="course-card-body">
+                    <div class="course-title">Graphic Design Essentials</div>
+                    <div class="course-description">Master the fundamentals of graphic design with this comprehensive course.</div>
+                    <div class="course-meta">
+                        <span>4.7/5</span> | <span>20 hours</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="marketing">
+                <img src="demo.jpeg" alt="Course Image">
+                <div class="course-card-body">
+                    <div class="course-title">Digital Marketing for Beginners</div>
+                    <div class="course-description">Start your journey in digital marketing with this easy-to-follow course.</div>
+                    <div class="course-meta">
+                        <span>4.2/5</span> | <span>25 hours</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="business">
+                <img src="demo.jpeg" alt="Course Image">
+                <div class="course-card-body">
+                    <div class="course-title">Entrepreneurship 101</div>
+                    <div class="course-description">Learn the essential skills to start your own business from scratch.</div>
+                    <div class="course-meta">
+                        <span>4.8/5</span> | <span>40 hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        function filterCourses() {
+            let searchQuery = document.getElementById('search').value.toLowerCase();
+            let category = document.getElementById('category').value.toLowerCase();
+            let courses = document.querySelectorAll('.course-card');
+            
+            courses.forEach(course => {
+                let courseTitle = course.querySelector('.course-title').textContent.toLowerCase();
+                let courseCategory = course.getAttribute('data-category').toLowerCase();
+                
+                // Hide courses that do not match the search or category
+                if ((courseTitle.includes(searchQuery) || searchQuery === '') && 
+                    (courseCategory.includes(category) || category === '')) {
+                    course.style.display = 'block';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
+    </script> -->
+
+</body>
+</html>
