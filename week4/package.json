@@ -1,0 +1,14 @@
+{
+  "name": "4_xml",
+  "version": "1.0.0",
+  "description": "## Objectives 1. Understand the integration of XML with HTML and its usage in web development. 2. Learn how to use XSL for transforming XML data into a structured format. 3. Implement validation controls on XML data to ensure data integrity and accuracy. 4. Develop skills in embedding XML data within HTML for enhanced web applications. 5. Gain hands-on experience in working with XML, XSL, and validation techniques.",
+  "main": "validate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "xsd-schema-validator": "^0.11.0"
+  }
+}
