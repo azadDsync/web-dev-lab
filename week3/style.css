@@ -1,0 +1,86 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Form Container */
+.form-container {
+  background: white;
+  padding: 0px 0px 0px 0px;
+  border-radius: 0 0 10px 10px; /* Only bottom corners rounded */
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Top Bar */
+.top-bar {
+  height: 8px;
+  background-color: #5c3ea6;
+  border-radius: 10px 10px 0 0; /* Only top corners rounded */
+  width: 100%;
+  margin-bottom: 24px;
+}
+#surveyForm{
+  padding: 20px;
+}
+
+/* Form Headline */
+.form-container h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* Labels */
+form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Inputs */
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Grouped Elements */
+.checkbox-group,
+.radio-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 100%;
+  background-color: #4285f4;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #357ae8;
+}

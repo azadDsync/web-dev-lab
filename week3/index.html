@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Forms Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <div class="top-bar"></div>
+    <h1>Google Form</h1>
+    <form id="surveyForm" novalidate>
+      <!-- Text Input -->
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Email Input -->
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required>
+
+      <!-- Password Input -->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" minlength="6">
+
+      <!-- Date Input -->
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob">
+
+      <!-- Time Input -->
+      <label for="appt-time">Preferred Time</label>
+      <input type="time" id="appt-time" name="appt-time">
+
+      <!-- Select Dropdown -->
+      <label for="role">Role</label>
+      <select id="role" name="role">
+        <option value="student">Student</option>
+        <option value="professional">Professional</option>
+        <option value="other">Other</option>
+      </select>
+
+      <!-- Checkbox -->
+      <label>Interests</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="interest" value="coding"> Coding</label>
+        <label><input type="checkbox" name="interest" value="design"> Design</label>
+        <label><input type="checkbox" name="interest" value="marketing"> Marketing</label>
+      </div>
+
+      <!-- Radio Button -->
+      <label>Gender</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="male" required> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="other"> Other</label>
+      </div>
+
+      <!-- File Upload -->
+      <label for="resume">Upload Resume</label>
+      <input type="file" id="resume" name="resume" multiple>
+
+      <!-- Textarea -->
+      <label for="about">About You</label>
+      <textarea id="about" name="about" rows="4" placeholder="Tell us something about yourself..."></textarea>
+
+      <!-- Range Input -->
+      <label for="experience">Experience Level</label>
+      <input type="range" id="experience" name="experience" min="0" max="10">
+
+      <!-- Color Picker -->
+      <label for="favcolor">Favorite Color</label>
+      <input type="color" id="favcolor" name="favcolor">
+
+      <!-- Hidden Input -->
+      <input type="hidden" name="formId" value="12345">
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('surveyForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>

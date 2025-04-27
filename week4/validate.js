@@ -1,16 +1,13 @@
 const validator = require('xsd-schema-validator');
+const path = require('path');
 
-const xmlString = require('fs').readFileSync('data.xml', 'utf8');
-const xsdPath = 'schema.xsd';
+const xmlFile = path.join(__dirname, 'students.xml');
+const xsdFile = path.join(__dirname, 'students.xsd');
 
-validator.validateXML(xmlString, xsdPath)
-  .then(result => {
-    if (result.valid) {
-      console.log("XML is valid!");
-    } else {
-      console.error("XML is invalid:", result.errors);
-    }
-  })
-  .catch(error => {
-    console.error("Validation error:", error);
-  });
+validator.validateXML({ file: xmlFile }, xsdFile, function(err, result) {
+  if (err) {
+    console.error('Validation failed:', err);
+  } else {
+    console.log('Validation successful:', result.valid);
+  }
+});

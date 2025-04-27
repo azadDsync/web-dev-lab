@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XML Display Example</title>
+</head>
+<body>
+  <h1>Student Details</h1>
+
+  <div id="output"></div>
+
+  <script>
+    const parser = new DOMParser();
+    const xmlString = `
+      <students>
+        <student>
+          <name>John Doe</name>
+          <roll>101</roll>
+          <branch>CSE</branch>
+        </student>
+      </students>
+    `;
+
+    const xmlDoc = parser.parseFromString(xmlString, "application/xml");
+    const student = xmlDoc.querySelector("student");
+
+    document.getElementById('output').innerHTML = `
+      <p>Name: ${student.querySelector("name").textContent}</p>
+      <p>Roll: ${student.querySelector("roll").textContent}</p>
+      <p>Branch: ${student.querySelector("branch").textContent}</p>
+    `;
+  </script>
+</body>
+</html>
